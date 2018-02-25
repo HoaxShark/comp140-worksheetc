@@ -8,6 +8,7 @@ this can be good or bad depending as you can get a higher score faster, but also
 increases difficulty
 
 Controller idea:
+
 Glove with bend resitance sensors on each finger
 fingers designated colour using fabric on the fingers
 bend fingers to input
