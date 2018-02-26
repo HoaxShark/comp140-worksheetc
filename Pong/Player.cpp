@@ -1,6 +1,8 @@
 #include "Player.h"
+#include "stdafx.h"
 #include <assert.h>
 #include <windows.h>
+
 
 
 void Player::init()
@@ -65,4 +67,15 @@ void Player::SetSide(Side eSide)
 	{
 		posX = 760;
 	}
+}
+
+void Player::SetPosY(float newPosY)
+{
+	if ((newPosY > 100) && (newPosY < (600 - h))) // if past the ingame window player wont move
+	posY = newPosY;
+}
+
+float Player::GetPosY()
+{
+	return posY;
 }

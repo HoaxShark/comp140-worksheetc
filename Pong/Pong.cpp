@@ -3,6 +3,7 @@
 
 bool Pong::Init(SDL_Renderer *renderer)
 {
+	serialInterface = new SerialInterface();
 	ThePlayers[0].init();
 	ThePlayers[0].SetSide(Player::Side_Left);
 
@@ -48,9 +49,9 @@ bool Pong::Update()
 		{
 			TheBall.PlayerReturns();
 		}
-
-		ThePlayers[0].Move();
-		ThePlayers[1].Move();
+		serialInterface->getPositions(); // gets the current readings
+		ThePlayers[0].SetPosY(serialInterface->getPot1()); // sets player 1 new position
+		ThePlayers[1].SetPosY(serialInterface->getPot2()); // sets player 2 new position
 	}
 
 	TheBall.Move();	
