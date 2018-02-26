@@ -11,4 +11,4 @@ Controller idea:
 
 Glove with bend resitance sensors on each finger,
 fingers designated colour using fabric on the fingers,
-bend fingers to input
+bend fingers to input.
