@@ -9,13 +9,16 @@ int outputValueLeft = 0;        // value output to the left PWM (analog out)
 int sensorValueRight = 0;        // value read from the right pot
 int outputValueRight = 0;        // value output to the right PWM (analog out)
 int inByte;
-int led1 = 9;
+int led1 = 13;
+int led2 = 12;
 bool led1state;
+bool led2state;
 
 void setup() {
   // initialize serial communications:
   Serial.begin(115200);
   pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
 }
 
 void loop() {
@@ -23,11 +26,14 @@ void loop() {
     inByte = Serial.read();
     if (inByte == 'P') sendPositions();
     if (inByte == 'L'){
-      if (led1state == false){
-        led1state =true;
         digitalWrite(led1, HIGH);
-      }else{
-        led1state = false;
+        delay(50);
+        digitalWrite(led1, LOW);
+    }
+    if (inByte == 'O'){
+        digitalWrite(led2, HIGH);
+        delay(50);
+        digitalWrite(led2, LOW);
     }
   }
 

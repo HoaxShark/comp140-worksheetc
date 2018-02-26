@@ -13,6 +13,7 @@ public:
 
 	void send(string msg);
 	void getPositions();
+	void lightSwitch(int player);
 
 	int getPot1() { return pot1; };
 	int getPot2() { return pot2; };

@@ -29,12 +29,14 @@ bool Pong::Update()
 		if(TheBall.OutOfBoundsSide() == Player::Side_Left)
 		{
 			Score[1]++;
+			serialInterface->lightSwitch(1);
 			serveTo = Player::Side_Left;
 		}
 
 		if(TheBall.OutOfBoundsSide() == Player::Side_Right)
 		{
 			Score[0]++;
+			serialInterface->lightSwitch(2);
 			serveTo = Player::Side_Right;
 		}
 
