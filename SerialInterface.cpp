@@ -8,7 +8,7 @@ using std::exception;
 using std::stoi;
 using std::string;
 
-const bool InStudio = true;
+const bool InStudio = false;
 const std::string PORT_NO = "COM4";
 
 SerialInterface::SerialInterface()
